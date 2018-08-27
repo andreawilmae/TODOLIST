@@ -1,0 +1,28 @@
+
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            To do List
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+        <ion-label floating>Enter task</ion-label>
+        <ion-input [(ngModel)]="todo" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+
+    <button ion-button full round color="danger" (click)="add()" ><ion-icon ion="ion-add-circle" md="md-add-circle"></ion-icon>ADD TASK</button>
+
+    <ion-list no-lines>
+        <ion-item *ngFor="let t of todos">
+            {{t}}
+            <ion-icon ion="create" md="md-create" item-end (click)="edit(t)"></ion-icon>
+            <ion-icon ion="trash" md="md-trash" item-end (click)="delete(t)"></ion-icon>
+
+        </ion-item>
+    </ion-list>
+</ion-content>
